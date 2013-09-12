@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metaModelInstance>
+  <name>Projeto em Cascata</name>
+  <metaModelFile>Projeto de Software Simples.jymm</metaModelFile>
+  <classInstances>
+    <classInstance>
+      <name>Projeto</name>
+      <class>Atividade</class>
+      <items>
+        <singleRelation>
+          <name>Equipe</name>
+          <target>D1</target>
+        </singleRelation>
+        <singleRelation>
+          <name>Entrada</name>
+          <target>Modelo de Análise</target>
+        </singleRelation>
+        <singleRelation>
+          <name>Saída</name>
+          <target>Modelo de Projeto</target>
+        </singleRelation>
+        <stock>
+          <name>Tempo para Concluir</name>
+          <value>9.999999999999504</value>
+        </stock>
+        <property>
+          <name>duração</name>
+          <value>20.0</value>
+        </property>
+      </items>
+    </classInstance>
+    <classInstance>
+      <name>Código Fonte</name>
+      <class>Artefato</class>
+      <items>
+        <property>
+          <name>erros iniciais</name>
+          <value>0.0</value>
+        </property>
+        <stock>
+          <name>Erros</name>
+          <value>0.0</value>
+        </stock>
+      </items>
+    </classInstance>
+    <classInstance>
+      <name>D2</name>
+      <class>Desenvolvedor</class>
+      <items>
+        <property>
+          <name>experiência</name>
+          <value>0.6</value>
+        </property>
+      </items>
+    </classInstance>
+    <classInstance>
+      <name>Codificação</name>
+      <class>Atividade</class>
+      <items>
+        <singleRelation>
+          <name>Equipe</name>
+          <target>D2</target>
+        </singleRelation>
+        <singleRelation>
+          <name>Entrada</name>
+          <target>Modelo de Projeto</target>
+        </singleRelation>
+        <singleRelation>
+          <name>Saída</name>
+          <target>Código Fonte</target>
+        </singleRelation>
+        <multiRelation>
+          <name>Precedente</name>
+          <targets>
+            <target>Projeto</target>
+          </targets>
+        </multiRelation>
+        <stock>
+          <name>Tempo para Concluir</name>
+          <value>15.0</value>
+        </stock>
+        <property>
+          <name>duração</name>
+          <value>15.0</value>
+        </property>
+      </items>
+    </classInstance>
+    <classInstance>
+      <name>Modelo de Projeto</name>
+      <class>Artefato</class>
+      <items>
+        <property>
+          <name>erros iniciais</name>
+          <value>0.0</value>
+        </property>
+        <stock>
+          <name>Erros</name>
+          <value>0.0</value>
+        </stock>
+      </items>
+    </classInstance>
+    <classInstance>
+      <name>D1</name>
+      <class>Desenvolvedor</class>
+      <items>
+        <property>
+          <name>experiência</name>
+          <value>3.0</value>
+        </property>
+      </items>
+    </classInstance>
+    <classInstance>
+      <name>Modelo de Análise</name>
+      <class>Artefato</class>
+      <items>
+        <property>
+          <name>erros iniciais</name>
+          <value>10.0</value>
+        </property>
+        <stock>
+          <name>Erros</name>
+          <value>10.0</value>
+        </stock>
+      </items>
+    </classInstance>
+  </classInstances>
+  <scenarios>
+    <files>
+      <file />
+    </files>
+    <connects>
+      <connect>
+        <scenario>Dependência de Atividades</scenario>
+        <name>AAtividade</name>
+        <instance>Projeto</instance>
+      </connect>
+      <connect>
+        <scenario>Dependência de Atividades</scenario>
+        <name>AAtividade</name>
+        <instance>Codificação</instance>
+      </connect>
+    </connects>
+  </scenarios>
+</metaModelInstance>
+
