@@ -20,6 +20,7 @@ import br.ufjf.mmc.jynacore.metamodel.simulator.impl.DefaultMetaModelInstanceEul
 import br.ufjf.mmc.jynacore.metamodel.simulator.impl.DefaultMetaModelInstanceSimulation;
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 
 /**
  *
@@ -90,8 +91,11 @@ public class JynacoreSimulatorToFiles {
 
         try {
             File file = new File(filePrefix + ".dat");
-            try (FileWriter fw = new FileWriter(file)) {
+            try {
+                FileWriter fw = new FileWriter(file);
                 fw.write(data.toString());
+            } catch (IOException e){
+                e.printStackTrace();
             }
 
         } catch (Exception e) {
